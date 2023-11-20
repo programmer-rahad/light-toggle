@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Light On Off ( 11:05am Saturday 14 January 2023 ) </title>
+</head>
+
+<body>
+
+ <div>
+  <img src="https://www.w3schools.com/Js/pic_bulboff.gif" alt="Light">
+  <button>On</button>
+ </div>
+
+
+
+ <script type="text/javascript">
+
+  !function () {
+
+   const img = document.querySelector('img');
+   const button = document.querySelector('button');
+
+   let state = {
+    light: true
+   };
+
+   function setState(newState) {
+
+    const object = {};
+
+    const keys = Object.keys(state);
+    const length = keys.length
+    for (let i = 0; i < length; i++) {
+     const key = keys[i];
+     object[key] = state[key]
+    }
+
+    const newKeys = Object.keys(newState);
+    const newLength = newKeys.length;
+    for (let i = 0; i < newLength; i++) {
+     const key = newKeys[i];
+     object[key] = newState[key];
+    }
+
+    state = object;
+
+   }
+
+   function onOff() {
+    const { light, on, off } = state;
+    img.src = light ? on : off;
+    button.innerHTML = light ? 'Off' : 'On';
+   }
+
+   function reset() {
+    const { on, off } = {
+     "on": "https://www.w3schools.com/Js/pic_bulbon.gif",
+     "off": "https://www.w3schools.com/Js/pic_bulboff.gif"
+    }
+    setState({ on, off });
+    onOff();
+   }
+   reset();
+   button.addEventListener('click', function () {
+    setState({ light: !state.light });
+    onOff();
+   });
+
+
+  }();
+
+
+
+
+ </script>
+</body>
+
+</html>

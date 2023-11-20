@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+	<script type="text/javascript"> 
+		document.write('<img id="img" src="https://www.w3schools.com/Js/pic_bulboff.gif" alt="" />');
+		document.write('<button id="on-off">Off</button>');
+		var btn = document.getElementById('on-off');
+		btn.addEventListener('click',onOff);
+		function onOff() {
+			var img = document.getElementById('img');
+				imgOff = 'https://www.w3schools.com/Js/pic_bulboff.gif';
+				imgOn = 'https://www.w3schools.com/Js/pic_bulbon.gif';
+			img.src == imgOff ? (img.src = imgOn,btn.innerHTML = 'On') : (img.src = imgOff,btn.innerHTML = 'Off');
+		}
+
+
+/*
+document.write('<img id="img" src="https://www.w3schools.com/Js/pic_bulboff.gif" alt="" />');
+document.write('<button id="on-off">Off</button>');
+var OffOn = document.getElementById("on-off");
+function onOff() {
+	var img = document.getElementById('img');
+	var imgSrc = img.src;
+	img.src = 'https://www.w3schools.com/Js/pic_bulboff.gif';
+	OffOn.innerHTML = 'Off';
+	if(imgSrc == 'https://www.w3schools.com/Js/pic_bulboff.gif') {
+		img.src = 'https://www.w3schools.com/Js/pic_bulbon.gif';
+		OffOn.innerHTML = 'On';
+	}
+}
+OffOn.addEventListener('click',onOff);
+*/
+
+
+/*
+		document.write('<button id="off-on">Off</button> <br />');		
+		document.write('<img id="img" src="https://www.w3schools.com/Js/pic_bulboff.gif" alt="" />');	
+		var btn = document.getElementById('off-on');
+		btn.addEventListener('click',functionOne);		
+		function functionOne() {
+			var img = document.getElementById('img');
+			var imgOff = 'https://www.w3schools.com/Js/pic_bulboff.gif';
+			var imgOn = 'https://www.w3schools.com/Js/pic_bulbon.gif';
+			if(img.src == imgOff) {
+				img.src = imgOn;
+				btn.innerHTML = 'On';
+			} else {
+				img.src = imgOff;
+				btn.innerHTML = 'Off';
+			}
+		}
+*/
+	</script>
+</body>
+</html>

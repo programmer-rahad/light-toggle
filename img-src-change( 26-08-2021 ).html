@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light ON / OFF ( Thursday, 26 August 2021 )</title>
+    <style>
+      button {
+        border: 1px solid;
+        padding: 5px 15px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      button.disabled {
+        cursor: not-allowed;
+        color: rgba(16, 16, 16, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <button>OFF</button>
+    <img src="https://www.w3schools.com/js/pic_bulbon.gif" alt="" />
+    <button class="disabled">ON</button>
+
+    <script>
+      !(function () {
+        const buttons = document.querySelectorAll('button');
+        const img = document.querySelector('img');
+        const src = 'https://www.w3schools.com/js/pic_bulbon.gif';
+        for (let i = 0; i < buttons.length; i++) {
+          buttons[i].addEventListener('click', function () {
+            if (this.innerText === 'OFF') {
+              img.src = src.replace('on', 'off');
+              this.classList.add('disabled');
+              buttons[1].classList.remove('disabled');
+              return;
+            }
+            img.src = src;
+            this.classList.add('disabled');
+            buttons[0].classList.remove('disabled');
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
